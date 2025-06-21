@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: white;
+  margin: 0;
+}
+
+/* 로고 div 스타일 */
+.logo-container {
+  width: 283px;
+  height: 268px;
+  background-image: url('logo_image.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 10px;
+  margin-top: -50px;
+}
+
+.bottom-area {
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  width: 87%;
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 4px; /* p태그와의 간격 좁히기 */
+  background-color: #3b6ef7; /* 파란색 */
+  color: white;
+  border: none;
+  border-radius: 6px; /* 모서리 살짝 둥글게 */
+  font-size: 0.9rem; /* 10px */
+}
+
+/* 문구 스타일 */
+p {
+  font-size: 14px;
+  margin-top: 2px; /* 버튼과 간격 최소화 */
+  font-size: 0.8rem; /* 10px */
+}
+
+p a {
+  color: #007bff; /* 파란색 링크 */
+  text-decoration: none; /* 밑줄 제거 */
+  margin-left: 4px; /* 앞 문구랑 살짝 띄움 */
+  cursor: pointer;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
