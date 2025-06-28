@@ -1,35 +1,32 @@
-.mypage-header h2 {
-  margin: 0;
-  padding: 16px 16px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
-
 body {
   margin: 0;
   background-color: #f4f6fa;
   font-family: sans-serif;
 }
 
+.mypage-header {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px 1rem;
+  box-sizing: border-box;
+}
+
+/* 마이페이지 헤더 */
+.mypage-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+/* 마이페이지 전체 레이아웃 */
 .mypage {
-  padding: 20px;
-  padding-bottom: 80px; /* 하단바 가리기 방지 */
+  padding: 20px 1rem; /* 좌우 1rem 패딩 추가 */
+  box-sizing: border-box;
+  max-width: 500px; /* 홈이랑 맞추려면 동일하게 */
+  margin: 0 auto; /* 중앙 정렬 */
 }
 
-.section {
-  text-align: center;
-  background-color: transparent;
-  margin-bottom: 30px;
-}
-
-.divider {
-  height: 8px;
-  background-color: white;
-  margin: 0 -20px; /* 주변 padding 보정 */
-}
-
-/* 프로필 스타일 */
+/* 프로필 영역 */
 .profile {
   display: flex;
   flex-direction: column;
@@ -41,12 +38,11 @@ body {
   width: 100px;
   height: 100px;
   background-color: #d9d9d9;
-  color: rgb(0, 0, 0); /* 글자색 흰색 */
-  font-size: 13px; /* 글자 크기 조정 */
+  font-size: 13px;
   border-radius: 50%;
-  display: flex; /* 정렬을 위해 flex 사용 */
-  justify-content: center; /* 가로 가운데 */
-  align-items: center; /* 세로 가운데 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -58,48 +54,275 @@ body {
 .edit-info {
   margin-top: 8px;
   padding: 6px 12px;
-  background-color: #ffffff; /* 배경 흰색 */
-  color: #3a66e6; /* 글자 색 파랑 */
+  background-color: #ffffff;
+  color: #3a66e6;
   border-radius: 10px;
   font-size: 13px;
   text-decoration: none;
 }
 
-/* 전공 이수학점 */
-.progress-section {
-  background-color: #f6f8ff;
-  border-radius: 12px;
-  padding: 20px;
+/* 구분선 */
+.divider {
+  height: 10px;
+  background-color: white;
+  margin: 24px -20px;
 }
 
-.progress-text {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #333;
+/* 전공 이수 학점 영역 */
+.credit-section {
+  margin: 30px 0;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+/* 카드 */
+.credit-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-height: 180px;
+}
+
+.credit-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.credit-message {
+  margin-top: 10px;
+  font-weight: bold;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.credit-detail {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 60px;
+}
+
+.credit-detail .dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.credit-detail .dark {
+  background-color: #3a66e6;
+}
+
+.credit-detail .light {
+  background-color: #b3ccff;
+}
+
+.credit-right {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-left: 20px;
 }
 
 .progress-circle {
-  width: 80px;
-  height: 80px;
-  background: conic-gradient(#3a66e6 0% 70%, #eee 70% 100%);
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  margin: 0 auto 10px;
+  background: conic-gradient(#3a66e6 0% 0%, #eee 0% 100%);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.progress-circle::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
 .percent {
-  font-size: 16px;
-  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+  font-size: 24px;
+  color: #000000;
+  z-index: 2;
+}
+
+/* =========================
+  공통 과목 카드 + 나의 커리큘럼
+========================= */
+/*연도 버튼*/
+.curriculum-year-buttons {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.curriculum-year-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1.2px solid #3a66e6;
+  border-radius: 10px;
+  background-color: #ffffff;
   color: #3a66e6;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
 }
 
-.progress-detail {
-  font-size: 13px;
-  color: #666;
+.curriculum-year-buttons button .arrow {
+  display: none;
+}
+.curriculum-year-buttons button.selected {
+  background-color: #3a66e6;
+  color: white;
 }
 
+.curriculum-year-buttons button.selected .arrow {
+  display: inline;
+}
+
+/*과목*/
+
+.subject-card {
+  width: 180px;
+  margin-right: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  overflow: visible;
+}
+
+.subject-header {
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(to bottom, #3a66e6, #3a66e6);
+  border-radius: 20px;
+  position: relative;
+}
+
+.subject-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 20px 12px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-top: -30px;
+  width: 160px;
+  text-align: center;
+  z-index: 1;
+  height: 90px; /* 높이 고정 */
+}
+
+.required-card .subject-info,
+.elective-card .subject-info {
+  width: 180px;
+  padding: 20px 1px 55px;
+}
+
+.subject-name {
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+.subject-semester {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.subject-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.elective-card .subject-buttons {
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.subject-buttons button {
+  width: 120px;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  border-radius: 12px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  background-color: #f7f8fd;
+  color: #3a66e6;
+  transition: 0.2s;
+}
+
+.required-card .subject-header {
+  background: linear-gradient(to bottom, #3a66e6 0%, #2f54c7 100%);
+}
+
+.elective-card .subject-header {
+  background: linear-gradient(to top, #e9f0fe 0%, #bcd4fa 50%, #6c92f0 100%);
+}
+
+.complete-btn.selected {
+  background-color: #3a66e6;
+  color: white;
+}
+
+.goto-home-button {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.goto-arrow {
+  width: 30px;
+  height: 30px;
+}
+
+/* 하단 네비게이션 */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -110,7 +333,7 @@ body {
   border-top: 1px solid #eee;
   display: flex;
   justify-content: space-around;
-  align-items: flex-start; /* ← 위로 몰리지 않게 조절 */
+  align-items: flex-start;
   padding-top: 15px;
   z-index: 100;
 }
@@ -133,4 +356,26 @@ body {
 
 .nav-item.active svg {
   fill: #3a66e6;
+}
+
+body {
+  overflow-y: scroll; /* 스크롤은 동작 */
+}
+
+.mypage {
+  padding-bottom: 80px; /* 60 + 약간의 여유 */
+}
+
+.subject-list {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 0 1rem 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.subject-list::-webkit-scrollbar {
+  display: none; /* 모바일 스크롤바 숨김 */
 }

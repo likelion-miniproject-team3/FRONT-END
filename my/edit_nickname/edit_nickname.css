@@ -6,7 +6,9 @@ body {
 }
 
 .nickname-edit-container {
-  padding: 20px;
+  padding: 20px 1rem; /* ← 좌우 1rem, 상하는 20px */
+  max-width: 500px; /* ← 마이페이지랑 맞추려면 */
+  margin: 0 auto; /* ← 중앙 정렬 */
   min-height: 100vh;
   box-sizing: border-box;
   display: flex;

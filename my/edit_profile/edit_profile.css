@@ -1,10 +1,12 @@
 /* 전체 컨테이너 */
 .edit-container {
-  padding: 20px;
+  padding: 20px 1rem; /* ← 좌우 여백 1rem */
   background-color: #f4f6fa;
   min-height: 100vh;
   box-sizing: border-box;
   text-align: center;
+  max-width: 500px; /* ← 폭 제한 (마이페이지랑 맞춤) */
+  margin: 0 auto; /* ← 가운데 정렬 */
 }
 
 .title {
@@ -171,8 +173,8 @@
 
 .back-button-wrapper {
   position: absolute;
-  top: 20px;
-  left: 16px;
+  top: 45px;
+  left: 135px;
   z-index: 20;
 }
 

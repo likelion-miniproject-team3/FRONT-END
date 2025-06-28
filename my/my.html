@@ -15,34 +15,81 @@
       <div class="section profile">
         <div class="profile-img">사진</div>
         <div class="profile-name" id="userNameDisplay">사용자 이름</div>
-        <a href="/my/edit_profile/edit_profile.html" class="edit-info"
-          >내 정보 수정</a
-        >
+        <a href="/my/edit_profile/edit_profile.html" class="edit-info">
+          내 정보 수정
+        </a>
       </div>
 
       <!-- 구분선 -->
       <div class="divider"></div>
 
       <!-- 전공 이수학점 영역 -->
-      <div class="section progress-section">
-        <div class="progress-text">
-          전공 학점, 70% 달성<br />조금만 더 힘내요!
-        </div>
-        <div class="progress-circle">
-          <div class="percent">70%</div>
-        </div>
-        <div class="progress-detail">
-          취득학점 (46/70)<br />미달학점 (24/70)
+      <div class="credit-section">
+        <div class="section-title">전공 이수학점</div>
+        <div class="credit-card">
+          <div class="credit-box">
+            <div class="credit-left">
+              <p class="credit-message" id="progressMessage"></p>
+              <div class="credit-detail">
+                <div class="dot dark"></div>
+                취득학점 (<span id="getScore">0</span>/70)<br />
+                <div class="dot light"></div>
+                미달학점 (<span id="lackScore">70</span>/70)
+              </div>
+            </div>
+            <div class="credit-right">
+              <div class="progress-circle"></div>
+              <div class="percent">0%</div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- 구분선 -->
       <div class="divider"></div>
-    </div>
 
-    <!-- 하단 네비게이션 -->
+      <section class="curriculum-section">
+  <h3>나의 커리큘럼</h3>
+
+  <!-- 학년 선택 버튼 -->
+  <div class="curriculum-year-buttons">
+        <button value="1">1학년 <span class="arrow">⌵</span></button>
+        <button value="2">2학년 <span class="arrow">⌵</span></button>
+        <button value="3">3학년 <span class="arrow">⌵</span></button>
+        <button value="4">4학년 <span class="arrow">⌵</span></button>
+      </div>
+
+  <section>
+  <h4>전공필수</h4>
+  <div id="required-subjects" class="subject-list">
+    <!-- 전공필수 과목 카드 -->
+  </div>
+</section>
+<section>
+  <h4>전공선택</h4>
+  <div id="elective-subjects" class="subject-list">
+    <!-- 전공선택 과목 카드 -->
+  </div>
+</section>
+  </div>
+</section>
+
+<!-- 오른쪽 화살표 버튼 -->
+<button class="goto-home-button">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="40"
+    height="40"
+    fill="#000000"
+    viewBox="0 0 24 24"
+    class="goto-arrow"
+  >
+    <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+  </svg>
+</button>
+
     <footer class="bottom-nav">
-      <a href="home.html" class="nav-item">
+      <a href="/home/home.html" class="nav-item" id="homeBtn">
         <!-- 집 아이콘 -->
         <svg
           width="24"
@@ -91,7 +138,6 @@
       </a>
     </footer>
 
-    <!-- JS 연결 -->
-    <script src="my.js"></script>
+    <script src="/my/my.js"></script>
   </body>
 </html>

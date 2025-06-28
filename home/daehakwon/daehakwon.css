@@ -54,14 +54,15 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
+  padding: 8px 16px; /* padding을 조금 더 늘려서 버튼이 더 크고 보기 좋게 */
   border: 1.2px solid #3a66e6;
   border-radius: 10px;
   background-color: #ffffff;
   color: #3a66e6;
   font-weight: bold;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem; /* 글자 크기를 조금 더 키움 */
+  transition: background-color 0.3s ease, color 0.3s ease; /* 색상 변화에 부드러운 전환 추가 */
 }
 
 .year-buttons button .arrow {
@@ -75,6 +76,11 @@ body {
 
 .year-buttons .selected .arrow {
   display: inline;
+}
+
+.year-buttons button:hover {
+  background-color: #e0e7ff; /* 버튼에 마우스를 올렸을 때 색상 변경 */
+  color: #3b6ef7;
 }
 
 .subject-section {
@@ -227,6 +233,21 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.goto-home-button {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.goto-arrow {
+  width: 30px;
+  height: 30px;
 }
 
 .profile-icon {
